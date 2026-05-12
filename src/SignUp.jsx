@@ -28,9 +28,9 @@ function SignUp() {
               Log in to manage your finances.
             </p>
 
-            <Link to="/login">
-                          <button>LOG IN</button>
-                        </Link>
+            <Link to="/currency">
+  <button className="login-submit">LOG IN</button>
+</Link>
           </div>
 
         </div>

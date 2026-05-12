@@ -28,7 +28,10 @@ function Login() {
               <span className="material-symbols-outlined eye">visibility</span>
             </div>
 
-            <button className="login-submit">LOG IN</button>
+            <Link to="/currency">
+  <button className="login-submit">LOG IN</button>
+</Link>
+
           </form>
         </div>
 

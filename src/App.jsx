@@ -5,6 +5,7 @@ import LandingPage from "./LandingPage";
 import Features from "./Features";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import Currency from "./Currency";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
 
         {/* LOGIN PAGE */}
         <Route path="/login" element={<Login />} />
+
+        <Route path="/currency" element={<Currency />} />
 
       </Routes>
     </BrowserRouter>

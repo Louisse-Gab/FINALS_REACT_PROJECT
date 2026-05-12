@@ -447,5 +447,8 @@ body{
     text-align:center;
     padding:25px 20px;
   }
+  .nav-buttons a{
+  text-decoration:none;
+}
 
 }

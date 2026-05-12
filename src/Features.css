@@ -23,10 +23,9 @@ body{
   font-weight:normal;
   font-style:normal;
   line-height:1;
-  display:inline-block;
-  text-transform:none;
-  letter-spacing:normal;
-  white-space:nowrap;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 }
 
 /* NAVBAR */
@@ -65,7 +64,6 @@ body{
   position:relative;
   font-size:14px;
   font-weight:500;
-  cursor:pointer;
 }
 
 .nav-links a{
@@ -86,12 +84,17 @@ body{
   width:100%;
   height:2px;
   background:#022FD9;
+  border-radius:10px;
 }
 
 .nav-buttons{
   display:flex;
   gap:12px;
   align-items:center;
+}
+
+.nav-buttons a{
+  text-decoration:none;
 }
 
 .login-btn{
@@ -115,23 +118,23 @@ body{
 /* HERO */
 
 .features-hero{
-  background:linear-gradient(to bottom,#F8FAFC 0%,#AFC0FF 20%,#4264E6 100%);
+  background:linear-gradient(to bottom,#F8FAFC 0%,#AFC0FF 14%,#4264E6 100%);
   text-align:center;
-  padding:80px 20px 75px;
+  padding:85px 20px 78px;
 }
 
 .features-hero h1{
   font-family:'Mansalva',cursive;
-  font-size:76px;
+  font-size:78px;
   color:#022FD9;
   margin-bottom:18px;
 }
 
 .features-hero p{
-  max-width:660px;
-  margin:auto;
+  max-width:690px;
+  margin:0 auto;
   color:white;
-  font-size:17px;
+  font-size:18px;
   line-height:1.7;
 }
 
@@ -139,12 +142,13 @@ body{
 
 .features-list{
   background:#F8FAFC;
-  padding:70px 20px 55px;
+  padding:75px 20px 65px;
 }
 
 .feature-item{
-  max-width:720px;
-  margin:0 auto 58px;
+  width:100%;
+  max-width:760px;
+  margin:0 auto 72px;
 }
 
 .feature-item.right{
@@ -154,8 +158,8 @@ body{
 .feature-title{
   display:flex;
   align-items:center;
-  gap:12px;
-  margin-bottom:8px;
+  gap:14px;
+  margin-bottom:10px;
 }
 
 .feature-title.reverse{
@@ -163,28 +167,33 @@ body{
 }
 
 .feature-icon{
-  width:54px;
-  height:54px;
-  min-width:54px;
+  width:58px;
+  height:58px;
+  min-width:58px;
+  min-height:58px;
   background:#022FD9;
-  color:white;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:32px;
+  flex-shrink:0;
+}
+
+.feature-icon span{
+  font-size:30px;
+  color:white;
 }
 
 .feature-title h2{
   color:#022FD9;
-  font-size:31px;
+  font-size:34px;
   font-weight:700;
 }
 
 .feature-desc{
-  font-size:15px;
-  line-height:1.45;
-  max-width:500px;
+  font-size:16px;
+  line-height:1.55;
+  max-width:520px;
   margin-bottom:16px;
 }
 
@@ -195,7 +204,7 @@ body{
 .feature-box{
   background:#E7ECFA;
   width:fit-content;
-  padding:14px 20px;
+  padding:14px 22px;
   border-radius:5px;
 }
 
@@ -204,8 +213,8 @@ body{
 }
 
 .feature-box p{
-  font-size:14px;
-  line-height:1.5;
+  font-size:15px;
+  line-height:1.7;
 }
 
 /* FOOTER */
@@ -248,6 +257,10 @@ body{
     display:none;
   }
 
+  .features-hero{
+    padding:65px 20px;
+  }
+
   .features-hero h1{
     font-size:52px;
   }
@@ -256,15 +269,41 @@ body{
     font-size:15px;
   }
 
+  .features-list{
+    padding:55px 25px;
+  }
+
   .feature-item,
   .feature-item.right{
     text-align:left;
     max-width:100%;
+    margin-bottom:55px;
   }
 
+  .feature-title,
   .feature-title.reverse{
     justify-content:flex-start;
-    flex-direction:row-reverse;
+    flex-direction:row;
+  }
+
+  .feature-title h2{
+    font-size:27px;
+  }
+
+  .feature-icon{
+    width:52px;
+    height:52px;
+    min-width:52px;
+    min-height:52px;
+  }
+
+  .feature-icon span{
+    font-size:28px;
+  }
+
+  .feature-desc{
+    max-width:100%;
+    font-size:15px;
   }
 
   .feature-item.right .feature-desc,
@@ -272,13 +311,14 @@ body{
     margin-left:0;
   }
 
-  .feature-title h2{
-    font-size:25px;
+  .feature-box{
+    width:fit-content;
   }
 
   .footer{
     flex-direction:column;
     gap:10px;
     padding:22px 20px;
+    text-align:center;
   }
 }

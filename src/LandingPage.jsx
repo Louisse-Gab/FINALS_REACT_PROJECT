@@ -36,9 +36,20 @@ function LandingPage() {
 </ul>
 
         <div className="nav-buttons">
-          <button className="login-btn">Log in</button>
-          <button className="signup-btn">Sign up</button>
-        </div>
+
+  <Link to="/login">
+    <button className="login-btn">
+      Log in
+    </button>
+  </Link>
+
+  <Link to="/signup">
+    <button className="signup-btn">
+      Sign up
+    </button>
+  </Link>
+
+</div>
 
       </nav>
 

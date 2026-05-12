@@ -1,5 +1,3 @@
-/* SignUp.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Mansalva&family=Poppins:wght@400;500;600;700&display=swap');
 
 *{
@@ -13,7 +11,7 @@ body{
   font-family:'Poppins',sans-serif;
 }
 
-.signup-page{
+.login-page{
   min-height:100vh;
   background:#F8FAFC;
   display:flex;
@@ -23,20 +21,7 @@ body{
   padding:30px;
 }
 
-.material-symbols-outlined{
-  font-family:'Material Symbols Outlined';
-  font-weight:normal;
-  font-style:normal;
-  line-height:1;
-  display:inline-block;
-  text-transform:none;
-  letter-spacing:normal;
-  white-space:nowrap;
-}
-
-/* CARD */
-
-.signup-card{
+.login-card{
   width:1150px;
   min-height:760px;
   background:white;
@@ -46,77 +31,15 @@ body{
   box-shadow:0 18px 45px rgba(0,0,0,.15);
 }
 
-/* LEFT SIDE */
+/* LEFT */
 
-.signup-left{
-  width:40%;
-  background:linear-gradient(to bottom,#C9D7FF,#4264E6,#022FD9);
-  padding:35px;
-  position:relative;
-}
-
-.signup-logo{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-family:'Mansalva',cursive;
-  font-size:34px;
-  color:#000000;
-}
-
-.signup-logo span{
-  color:#F5C644;
-  font-size:36px;
-}
-
-/* WELCOME TEXT */
-
-.welcome-text{
-  position:absolute;
-  left:35px;
-  right:35px;
-  top:310px;
-}
-
-.welcome-text h2{
-  font-size:45px;
-  margin-bottom:12px;
-  font-weight:700;
-  color:white;
-}
-
-.welcome-text p{
-  font-size:18px;
-  margin-bottom:20px;
-  color:white;
-}
-
-.welcome-text button{
-  width:230px;
-  padding:15px;
-  border:none;
-  border-radius:10px;
-  background:white;
-  color:#022FD9;
-  font-size:18px;
-  font-weight:600;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.welcome-text button:hover{
-  transform:translateY(-2px);
-}
-
-/* RIGHT SIDE */
-
-.signup-right{
+.login-left{
   width:60%;
-  padding:80px 115px;
+  padding:210px 115px 80px;
   text-align:center;
 }
 
-.signup-right h1{
+.login-left h1{
   font-size:43px;
   font-weight:700;
   color:#333;
@@ -135,8 +58,6 @@ body{
   color:#999;
   margin-bottom:30px;
 }
-
-/* INPUTS */
 
 .input-box{
   height:72px;
@@ -162,11 +83,6 @@ body{
   font-family:'Poppins',sans-serif;
   font-size:18px;
   color:#333;
-  background:transparent;
-}
-
-.input-box input::placeholder{
-  color:#999;
 }
 
 .eye{
@@ -175,9 +91,7 @@ body{
   margin-right:0 !important;
 }
 
-/* BUTTON */
-
-.signup-submit{
+.login-submit{
   width:230px;
   padding:17px;
   border:none;
@@ -187,64 +101,114 @@ body{
   font-size:18px;
   font-weight:600;
   cursor:pointer;
-  transition:.2s;
-  margin-top:5px;
 }
 
-.signup-submit:hover{
-  transform:translateY(-2px);
+/* RIGHT */
+
+.login-right{
+  width:40%;
+  background:linear-gradient(to bottom,#C9D7FF,#4264E6,#022FD9);
+  padding:35px;
+  position:relative;
+  color:white;
 }
 
-/* BACK HOME */
+.login-logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-family:'Mansalva',cursive;
+  font-size:34px;
+  color:#000000;
+}
+
+.login-logo span{
+  color:#F5C644;
+  font-size:36px;
+}
+
+.join-text{
+  position:absolute;
+  left:35px;
+  right:35px;
+  top:310px;
+  text-align:center;
+}
+
+.join-text h2{
+  font-size:45px;
+  font-weight:700;
+  color:white;
+  margin-bottom:18px;
+}
+
+.join-text p{
+  font-size:18px;
+  color:white;
+  line-height:1.6;
+  margin-bottom:20px;
+}
+
+.join-text a{
+  text-decoration:none;
+}
+
+.join-text button{
+  width:230px;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:white;
+  color:#022FD9;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+}
 
 .back-home{
   margin-top:45px;
   font-size:20px;
   color:#999;
   text-decoration:none;
-  transition:.2s;
 }
 
 .back-home:hover{
   color:#022FD9;
 }
 
-/* RESPONSIVE */
-
 @media(max-width:1200px){
-
-  .signup-card{
+  .login-card{
     width:95%;
   }
-
 }
 
 @media(max-width:768px){
-
-  .signup-card{
+  .login-card{
     flex-direction:column;
     min-height:auto;
   }
 
-  .signup-left,
-  .signup-right{
+  .login-left,
+  .login-right{
     width:100%;
   }
 
-  .signup-left{
+  .login-left{
+    padding:60px 30px;
+  }
+
+  .login-right{
     min-height:320px;
   }
 
-  .welcome-text{
+  .join-text{
     position:static;
     margin-top:90px;
   }
 
-  .signup-right{
-    padding:50px 30px;
-  }
-
-  .signup-right h1{
+  .login-left h1,
+  .join-text h2{
     font-size:34px;
   }
 
@@ -256,8 +220,7 @@ body{
     font-size:16px;
   }
 
-  .signup-submit{
+  .login-submit{
     width:100%;
   }
-
 }

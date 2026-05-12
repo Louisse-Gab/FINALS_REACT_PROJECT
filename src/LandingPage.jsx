@@ -21,11 +21,18 @@ function LandingPage() {
   <li className="active">
     <Link to="/">Home</Link>
   </li>
-  <li>Get Started</li>
+
+  <li>
+    <Link to="/getstarted">Get Started</Link>
+  </li>
+
   <li>
     <Link to="/features">Features</Link>
   </li>
-  <li>About Us</li>
+
+  <li>
+    <Link to="/about">About Us</Link>
+  </li>
 </ul>
 
         <div className="nav-buttons">

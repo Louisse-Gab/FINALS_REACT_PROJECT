@@ -19,17 +19,23 @@ function Features() {
           PennyWise
         </div>
 
-      <ul className="nav-links">
+<ul className="nav-links">
   <li>
     <Link to="/">Home</Link>
   </li>
-  <li>Get Started</li>
+
+  <li>
+    <Link to="/getstarted">Get Started</Link>
+  </li>
+
   <li className="active">
     <Link to="/features">Features</Link>
   </li>
-  <li>About Us</li>
-</ul>
 
+  <li>
+    <Link to="/about">About Us</Link>
+  </li>
+</ul>
         <div className="nav-buttons">
           <button className="login-btn">Log in</button>
           <button className="signup-btn">Sign up</button>

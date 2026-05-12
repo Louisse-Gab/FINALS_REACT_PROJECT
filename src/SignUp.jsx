@@ -121,9 +121,9 @@ function SignUp() {
 
             </div>
 
-            <button className="signup-submit">
-              SIGN UP
-            </button>
+            <Link to="/login">
+                          <button className="signup-submit">SIGN UP</button>
+                        </Link>
 
           </form>
 

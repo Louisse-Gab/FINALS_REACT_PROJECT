@@ -22,16 +22,32 @@ function Transaction() {
         </div>
 
         <ul className="dash-links">
-          <li><Link to="/dashboard">Dashboard</Link></li>
-          <li className="active"><Link to="/transactions">Transactions</Link></li>
-          <li><Link to="/budget">Budget</Link></li>
-          <li><Link to="/goals">Goals</Link></li>
-          <li><Link to="/analytics">Analytics</Link></li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+
+          <li className="active">
+            <Link to="/transactions">Transactions</Link>
+          </li>
+
+          <li>
+            <Link to="/budget">Budget</Link>
+          </li>
+
+          <li>
+            <Link to="/goals">Goals</Link>
+          </li>
+
+          <li>
+            <Link to="/analytics">Analytics</Link>
+          </li>
         </ul>
 
-        <span className="material-symbols-outlined profile-icon">
-          account_circle
-        </span>
+        <Link to="/profile" className="profile-link">
+          <span className="material-symbols-outlined profile-icon">
+            account_circle
+          </span>
+        </Link>
       </nav>
 
       <main className="transactions-content">
@@ -41,7 +57,10 @@ function Transaction() {
               <p>Total Balance</p>
               <h2>₱45,320.00</h2>
             </div>
-            <span className="material-symbols-outlined">account_balance_wallet</span>
+
+            <span className="material-symbols-outlined">
+              account_balance_wallet
+            </span>
           </div>
 
           <div className="summary-card income">
@@ -49,7 +68,10 @@ function Transaction() {
               <p>Total Income</p>
               <h2>₱25,800.00</h2>
             </div>
-            <span className="material-symbols-outlined">trending_up</span>
+
+            <span className="material-symbols-outlined">
+              trending_up
+            </span>
           </div>
 
           <div className="summary-card expense">
@@ -57,23 +79,40 @@ function Transaction() {
               <p>Total Expense</p>
               <h2>₱18,600.00</h2>
             </div>
-            <span className="material-symbols-outlined">trending_down</span>
+
+            <span className="material-symbols-outlined">
+              trending_down
+            </span>
           </div>
         </section>
 
         <div className="transaction-header">
           <h2>Transactions</h2>
 
-          <button className="add-btn" onClick={() => setShowAddModal(true)}>
+          <button
+            className="add-btn"
+            onClick={() => setShowAddModal(true)}
+          >
             + Add Transaction
           </button>
         </div>
 
         <div className="filters">
-          <select><option>This Month</option></select>
-          <select><option>All Category</option></select>
-          <select><option>All Types</option></select>
-          <select><option>Newest First</option></select>
+          <select>
+            <option>This Month</option>
+          </select>
+
+          <select>
+            <option>All Category</option>
+          </select>
+
+          <select>
+            <option>All Types</option>
+          </select>
+
+          <select>
+            <option>Newest First</option>
+          </select>
         </div>
 
         <div className="table-card">
@@ -103,7 +142,11 @@ function Transaction() {
                 {item[2]}
               </strong>
 
-              <div className={`type-pill ${item[3] === "Income" ? "income-pill" : "expense-pill"}`}>
+              <div
+                className={`type-pill ${
+                  item[3] === "Income" ? "income-pill" : "expense-pill"
+                }`}
+              >
                 {item[3]}
               </div>
 
@@ -138,15 +181,21 @@ function Transaction() {
           <div className="transaction-modal">
             <h3>Add Transaction</h3>
 
-            <label>Date of Transaction <span>*</span></label>
+            <label>
+              Date of Transaction <span>*</span>
+            </label>
             <input type="date" />
 
             <label>Description</label>
             <input type="text" placeholder="Enter Description" />
 
-            <label>Category <span>*</span></label>
+            <label>
+              Category <span>*</span>
+            </label>
             <select defaultValue="">
-              <option value="" disabled>Select Category</option>
+              <option value="" disabled>
+                Select Category
+              </option>
               <option>Food & Dining</option>
               <option>Salary</option>
               <option>Transportation</option>
@@ -154,22 +203,34 @@ function Transaction() {
               <option>Investment</option>
             </select>
 
-            <label>Transaction Type <span>*</span></label>
+            <label>
+              Transaction Type <span>*</span>
+            </label>
             <select defaultValue="">
-              <option value="" disabled>All Types</option>
+              <option value="" disabled>
+                All Types
+              </option>
               <option>Income</option>
               <option>Expense</option>
             </select>
 
-            <label>Amount <span>*</span></label>
+            <label>
+              Amount <span>*</span>
+            </label>
             <input type="text" placeholder="Amount" />
 
             <div className="modal-actions">
-              <button className="cancel-btn" onClick={() => setShowAddModal(false)}>
+              <button
+                className="cancel-btn"
+                onClick={() => setShowAddModal(false)}
+              >
                 Cancel
               </button>
 
-              <button className="save-btn" onClick={() => setShowAddModal(false)}>
+              <button
+                className="save-btn"
+                onClick={() => setShowAddModal(false)}
+              >
                 Add Transaction
               </button>
             </div>

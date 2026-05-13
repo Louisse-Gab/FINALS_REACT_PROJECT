@@ -11,33 +11,29 @@ function Dashboard() {
           PennyWise
         </div>
 
-       <ul className="dash-links">
+        <ul className="dash-links">
+          <li className="active">
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/transactions">Transactions</Link>
+          </li>
+          <li>
+            <Link to="/budget">Budget</Link>
+          </li>
+          <li>
+            <Link to="/goals">Goals</Link>
+          </li>
+          <li>
+            <Link to="/analytics">Analytics</Link>
+          </li>
+        </ul>
 
-  <li className="active">
-    <Link to="/dashboard">Dashboard</Link>
-  </li>
-
-  <li>
-    <Link to="/transactions">Transactions</Link>
-  </li>
-
-  <li>
-    <Link to="/budget">Budget</Link>
-  </li>
-
-  <li>
-    <Link to="/goals">Goals</Link>
-  </li>
-
-  <li>
-    <Link to="/analytics">Analytics</Link>
-  </li>
-
-</ul>
-
-        <span className="material-symbols-outlined profile-icon">
-          account_circle
-        </span>
+        <Link to="/profile" className="profile-link">
+          <span className="material-symbols-outlined profile-icon">
+            account_circle
+          </span>
+        </Link>
       </nav>
 
       <main className="dashboard-content">

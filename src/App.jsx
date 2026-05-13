@@ -8,28 +8,24 @@ import Login from "./Login";
 import Balance from "./Balance";
 import Currency from "./Currency";
 import Success from "./Success";
+import Dashboard from "./Dashboard";
+import Transaction from "./Transaction";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* LANDING PAGE */}
         <Route path="/" element={<LandingPage />} />
-
-        {/* FEATURES PAGE */}
         <Route path="/features" element={<Features />} />
-
-        {/* SIGN UP PAGE */}
         <Route path="/signup" element={<SignUp />} />
-
-        {/* LOGIN PAGE */}
         <Route path="/login" element={<Login />} />
 
         <Route path="/currency" element={<Currency />} />
         <Route path="/balance" element={<Balance />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/dashboard" element={<Dashboard />} />
 
+        <Route path="/transactions" element={<Transaction />} />
       </Routes>
     </BrowserRouter>
   );

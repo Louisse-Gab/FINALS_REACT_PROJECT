@@ -60,9 +60,11 @@ function Success() {
             ready to give you insights and control over your finances.
           </p>
 
-          <button>
-            Continue to Dashboard
-          </button>
+          <Link to="/dashboard">
+  <button>
+    Continue to Dashboard
+  </button>
+</Link>
 
         </div>
 

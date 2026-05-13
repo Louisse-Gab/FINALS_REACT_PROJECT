@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
 
 function Dashboard() {
+  const [showAddModal, setShowAddModal] = useState(false);
+
   return (
     <div className="dashboard-page">
       <nav className="dashboard-nav">
@@ -15,15 +17,19 @@ function Dashboard() {
           <li className="active">
             <Link to="/dashboard">Dashboard</Link>
           </li>
+
           <li>
             <Link to="/transactions">Transactions</Link>
           </li>
+
           <li>
             <Link to="/budget">Budget</Link>
           </li>
+
           <li>
             <Link to="/goals">Goals</Link>
           </li>
+
           <li>
             <Link to="/analytics">Analytics</Link>
           </li>
@@ -43,7 +49,9 @@ function Dashboard() {
               <p>Total Balance</p>
               <h2>₱45,320.00</h2>
             </div>
-            <span className="material-symbols-outlined">account_balance_wallet</span>
+            <span className="material-symbols-outlined">
+              account_balance_wallet
+            </span>
           </div>
 
           <div className="summary-card income">
@@ -51,7 +59,9 @@ function Dashboard() {
               <p>Total Income</p>
               <h2>₱25,800.00</h2>
             </div>
-            <span className="material-symbols-outlined">trending_up</span>
+            <span className="material-symbols-outlined">
+              trending_up
+            </span>
           </div>
 
           <div className="summary-card expense">
@@ -59,7 +69,9 @@ function Dashboard() {
               <p>Total Expense</p>
               <h2>₱18,600.00</h2>
             </div>
-            <span className="material-symbols-outlined">trending_down</span>
+            <span className="material-symbols-outlined">
+              trending_down
+            </span>
           </div>
         </section>
 
@@ -134,7 +146,13 @@ function Dashboard() {
         <section className="transactions-section">
           <div className="section-header">
             <h3>Recent Transactions</h3>
-            <button className="add-btn">＋ Add Transaction</button>
+
+            <button
+              className="add-btn"
+              onClick={() => setShowAddModal(true)}
+            >
+              ＋ Add Transaction
+            </button>
           </div>
 
           <div className="transactions-card">
@@ -170,6 +188,68 @@ function Dashboard() {
       <footer className="dashboard-footer">
         © 2026 PennyWise. All rights reserved.
       </footer>
+
+      {showAddModal && (
+        <div className="modal-overlay">
+          <div className="transaction-modal">
+            <h3>Add Transaction</h3>
+
+            <label>
+              Date of Transaction <span>*</span>
+            </label>
+            <input type="date" />
+
+            <label>Description</label>
+            <input type="text" placeholder="Enter Description" />
+
+            <label>
+              Category <span>*</span>
+            </label>
+            <select defaultValue="">
+              <option value="" disabled>
+                Select Category
+              </option>
+              <option>Food & Dining</option>
+              <option>Salary</option>
+              <option>Transportation</option>
+              <option>Shopping</option>
+              <option>Investment</option>
+            </select>
+
+            <label>
+              Transaction Type <span>*</span>
+            </label>
+            <select defaultValue="">
+              <option value="" disabled>
+                All Types
+              </option>
+              <option>Income</option>
+              <option>Expense</option>
+            </select>
+
+            <label>
+              Amount <span>*</span>
+            </label>
+            <input type="text" placeholder="Amount" />
+
+            <div className="modal-actions">
+              <button
+                className="cancel-btn"
+                onClick={() => setShowAddModal(false)}
+              >
+                Cancel
+              </button>
+
+              <button
+                className="save-btn"
+                onClick={() => setShowAddModal(false)}
+              >
+                Add Transaction
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

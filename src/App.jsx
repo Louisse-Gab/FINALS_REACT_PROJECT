@@ -4,12 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import GetStarted from "./GetStarted";
 import Features from "./Features";
-<<<<<<< HEAD
-// import AboutUs from "./AboutUs";
-// import GetStarted from "./GetStarted";
-=======
 import AboutUs from "./AboutUs";
->>>>>>> 1eeaa5d39733ba4e8a5358b16c38de00680b4637
 import SignUp from "./SignUp";
 import Login from "./Login";
 import Balance from "./Balance";
@@ -28,8 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/Features" element={<Features />} />
-        {/* <Route path="/about" element={<AboutUs />} /> */}
-      {/* <Route path="/getstarted" element={<GetStarted />} /> */}
+ 
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
 

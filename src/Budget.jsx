@@ -1,20 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Budget.css";
 
 function Budget() {
+
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+
   return (
+
     <div className="budget-page">
+
       <nav className="dashboard-nav">
 
         <div className="dash-logo">
+
           <span className="material-symbols-outlined">
             savings
           </span>
+
           PennyWise
+
         </div>
 
         <ul className="dash-links">
+
           <li>
             <Link to="/dashboard">
               Dashboard
@@ -44,12 +54,15 @@ function Budget() {
               Analytics
             </Link>
           </li>
+
         </ul>
 
         <Link to="/profile">
+
           <span className="material-symbols-outlined profile-icon">
             account_circle
           </span>
+
         </Link>
 
       </nav>
@@ -57,16 +70,26 @@ function Budget() {
       <main className="budget-content">
 
         <div className="budget-header">
+
           <div>
-            <h2>Budget Planner</h2>
+
+            <h2>
+              Budget Planner
+            </h2>
+
             <p>
               Plan and monitor your monthly limits
             </p>
+
           </div>
 
-          <button className="add-budget-btn">
+          <button
+            className="add-budget-btn"
+            onClick={() => setShowAddModal(true)}
+          >
             + Add New Budget
           </button>
+
         </div>
 
         <div className="budget-filters">
@@ -88,29 +111,38 @@ function Budget() {
         <section className="budget-summary">
 
           <div className="budget-summary-card">
+
             <p>Total Budget</p>
             <h2>₱60,000</h2>
             <small>for Oct 2025</small>
+
           </div>
 
           <div className="budget-summary-card">
+
             <p>Total Spent</p>
             <h2>₱43,200</h2>
+
             <small className="danger">
               -8%
             </small>
+
           </div>
 
           <div className="budget-summary-card">
+
             <p>Remaining</p>
             <h2>₱16,800</h2>
 
             <div className="progress-bar">
+
               <div
                 className="progress-fill green"
                 style={{ width: "72%" }}
               ></div>
+
             </div>
+
           </div>
 
         </section>
@@ -118,12 +150,14 @@ function Budget() {
         <section className="budget-table-card">
 
           <div className="budget-table-head">
+
             <span>Category</span>
             <span>Limit</span>
             <span>Spent</span>
             <span>Remaining</span>
             <span>Progress</span>
             <span>Actions</span>
+
           </div>
 
           {[
@@ -207,16 +241,27 @@ function Budget() {
 
               <div className="actions">
 
-                <button className="edit-btn">
+                {/* EDIT BUTTON */}
+
+                <button
+                  className="edit-btn"
+                  onClick={() => setShowEditModal(true)}
+                >
+
                   <span className="material-symbols-outlined">
                     edit
                   </span>
+
                 </button>
 
+                {/* DELETE BUTTON */}
+
                 <button className="delete-btn">
+
                   <span className="material-symbols-outlined">
                     delete
                   </span>
+
                 </button>
 
               </div>
@@ -228,11 +273,13 @@ function Budget() {
         </section>
 
         <div className="pagination">
+
           <button>Prev</button>
           <button className="active-page">1</button>
           <button>2</button>
           <button>3</button>
           <button>Next</button>
+
         </div>
 
         <h3 className="insights-title">
@@ -244,6 +291,7 @@ function Budget() {
           <div className="insight-card">
 
             <div className="chart-top">
+
               <h4>
                 Budget vs Spending Over Time
               </h4>
@@ -251,6 +299,7 @@ function Budget() {
               <span>
                 Monthly trend
               </span>
+
             </div>
 
             <div className="line-chart">
@@ -331,6 +380,177 @@ function Budget() {
       <footer className="dashboard-footer">
         © 2026 PennyWise. All rights reserved.
       </footer>
+
+      {/* ================= ADD BUDGET MODAL ================= */}
+
+      {showAddModal && (
+
+        <div className="modal-overlay">
+
+          <div className="transaction-modal">
+
+            <h3>Add Budget</h3>
+
+            <label>
+              Date of Transaction <span>*</span>
+            </label>
+
+            <input type="date" />
+
+            <label>
+              Notes
+            </label>
+
+            <input
+              type="text"
+              placeholder="Notes"
+            />
+
+            <label>
+              Category <span>*</span>
+            </label>
+
+            <select defaultValue="">
+
+              <option value="" disabled>
+                Select Category
+              </option>
+
+              <option>
+                All Categories
+              </option>
+
+              <option>
+                Food & Dining
+              </option>
+
+              <option>
+                Transportation
+              </option>
+
+              <option>
+                Bills & Utilities
+              </option>
+
+            </select>
+
+            <label>
+              Budget Limit <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              placeholder="Amount"
+            />
+
+            <div className="modal-actions">
+
+              <button
+                className="cancel-btn"
+                onClick={() => setShowAddModal(false)}
+              >
+                Cancel
+              </button>
+
+              <button
+                className="save-btn"
+                onClick={() => setShowAddModal(false)}
+              >
+                Add
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
+
+      {/* ================= EDIT BUDGET MODAL ================= */}
+
+      {showEditModal && (
+
+        <div className="modal-overlay">
+
+          <div className="transaction-modal">
+
+            <h3>Edit Budget</h3>
+
+            <label>
+              Date of Transaction <span>*</span>
+            </label>
+
+            <input
+              type="date"
+              defaultValue="2025-10-15"
+            />
+
+            <label>
+              Notes
+            </label>
+
+            <input
+              type="text"
+              defaultValue="Monthly Food Budget"
+            />
+
+            <label>
+              Category <span>*</span>
+            </label>
+
+            <select defaultValue="Food & Dining">
+
+              <option>
+                All Categories
+              </option>
+
+              <option>
+                Food & Dining
+              </option>
+
+              <option>
+                Transportation
+              </option>
+
+              <option>
+                Bills & Utilities
+              </option>
+
+            </select>
+
+            <label>
+              Budget Limit <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              defaultValue="10000"
+            />
+
+            <div className="modal-actions">
+
+              <button
+                className="cancel-btn"
+                onClick={() => setShowEditModal(false)}
+              >
+                Cancel
+              </button>
+
+              <button
+                className="save-btn"
+                onClick={() => setShowEditModal(false)}
+              >
+                Save Changes
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
 
     </div>
   );

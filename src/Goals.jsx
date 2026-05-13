@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Goals.css";
 
 function Goals() {
+
+  const [showAddGoalModal, setShowAddGoalModal] = useState(false);
+  const [showEditGoalModal, setShowEditGoalModal] = useState(false);
 
   const goals = [
     {
@@ -10,7 +13,8 @@ function Goals() {
       saved: "₱50,000",
       target: "₱80,000",
       progress: "62%",
-      width: "62%"
+      width: "62%",
+      status: "Ongoing"
     },
 
     {
@@ -18,7 +22,8 @@ function Goals() {
       saved: "₱40,000",
       target: "₱100,000",
       progress: "40%",
-      width: "40%"
+      width: "40%",
+      status: "Ongoing"
     },
 
     {
@@ -26,21 +31,25 @@ function Goals() {
       saved: "₱60,000",
       target: "₱60,000",
       progress: "100%",
-      width: "100%"
+      width: "100%",
+      status: "Completed"
     }
   ];
 
   return (
+
     <div className="goals-page">
 
       <nav className="dashboard-nav">
 
         <div className="dash-logo">
+
           <span className="material-symbols-outlined">
             savings
           </span>
 
           PennyWise
+
         </div>
 
         <ul className="dash-links">
@@ -78,9 +87,11 @@ function Goals() {
         </ul>
 
         <Link to="/profile">
+
           <span className="material-symbols-outlined profile-icon">
             account_circle
           </span>
+
         </Link>
 
       </nav>
@@ -90,14 +101,21 @@ function Goals() {
         <div className="goals-header">
 
           <div>
-            <h2>Budget Goals</h2>
+
+            <h2>
+              Budget Goals
+            </h2>
 
             <p>
               Set, track, and achieve your financial targets
             </p>
+
           </div>
 
-          <button className="add-goal-btn">
+          <button
+            className="add-goal-btn"
+            onClick={() => setShowAddGoalModal(true)}
+          >
             + Add Goal
           </button>
 
@@ -115,17 +133,58 @@ function Goals() {
 
         </div>
 
+        {/* GOAL CARDS */}
+
         <section className="goal-cards">
 
           {goals.map((goal, index) => (
 
             <div className="goal-card" key={index}>
 
-              <h3>{goal.title}</h3>
+              <div className="goal-card-top">
 
-              <p>
-                {goal.saved} Target | {goal.target} Saved
-              </p>
+                <div>
+
+                  <h3>
+                    {goal.title}
+                  </h3>
+
+                  <p>
+                    {goal.target} Target | {goal.saved} Saved
+                  </p>
+
+                </div>
+
+                <div className="goal-actions">
+
+                  {/* EDIT BUTTON */}
+
+                  <button
+                    className="goal-edit-btn"
+                    onClick={() => setShowEditGoalModal(true)}
+                  >
+
+                    <span className="material-symbols-outlined">
+                      edit
+                    </span>
+
+                  </button>
+
+                  {/* DELETE BUTTON */}
+
+                  <button className="goal-delete-btn">
+
+                    <span className="material-symbols-outlined">
+                      delete
+                    </span>
+
+                  </button>
+
+                </div>
+
+              </div>
+
+              {/* PROGRESS BAR */}
 
               <div className="goal-progress-bar">
 
@@ -136,10 +195,18 @@ function Goals() {
 
               </div>
 
+              {/* FOOTER */}
+
               <div className="goal-progress-footer">
 
-                <span className="ongoing-tag">
-                  Ongoing
+                <span
+                  className={
+                    goal.status === "Completed"
+                      ? "completed-tag"
+                      : "ongoing-tag"
+                  }
+                >
+                  {goal.status}
                 </span>
 
                 <small>
@@ -153,6 +220,8 @@ function Goals() {
           ))}
 
         </section>
+
+        {/* OVERVIEW */}
 
         <h3 className="overview-title">
           Goal Progress Overview
@@ -244,7 +313,234 @@ function Goals() {
         © 2026 PennyWise. All rights reserved.
       </footer>
 
+      {/* ================= ADD GOAL MODAL ================= */}
+
+      {showAddGoalModal && (
+
+        <div className="modal-overlay">
+
+          <div className="goal-modal">
+
+            <h3>
+              Add New Goal
+            </h3>
+
+            <label>
+              Name <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              placeholder="Goal Name"
+            />
+
+            <label>
+              Target Amount <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              placeholder="Target Amount (₱)"
+            />
+
+            <label>
+              Start Date <span>*</span>
+            </label>
+
+            <input type="date" />
+
+            <label>
+              End Date <span>*</span>
+            </label>
+
+            <input type="date" />
+
+            <label>
+              Category <span>*</span>
+            </label>
+
+            <select defaultValue="">
+
+              <option value="" disabled>
+                All Categories
+              </option>
+
+              <option>
+                Food & Dining
+              </option>
+
+              <option>
+                Transportation
+              </option>
+
+              <option>
+                Bills & Utilities
+              </option>
+
+              <option>
+                Savings
+              </option>
+
+            </select>
+
+            <label>
+              Status <span>*</span>
+            </label>
+
+            <select defaultValue="">
+
+              <option value="" disabled>
+                Status
+              </option>
+
+              <option>
+                Ongoing
+              </option>
+
+              <option>
+                Completed
+              </option>
+
+            </select>
+
+            <div className="modal-actions">
+
+              <button
+                className="cancel-btn"
+                onClick={() => setShowAddGoalModal(false)}
+              >
+                Cancel
+              </button>
+
+              <button
+                className="save-btn"
+                onClick={() => setShowAddGoalModal(false)}
+              >
+                Add Goal
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
+
+      {/* ================= EDIT GOAL MODAL ================= */}
+
+      {showEditGoalModal && (
+
+        <div className="modal-overlay">
+
+          <div className="goal-modal">
+
+            <h3>
+              Edit Goal
+            </h3>
+
+            <label>
+              Name <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              defaultValue="Buy a New Laptop"
+            />
+
+            <label>
+              Target Amount <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              defaultValue="80000"
+            />
+
+            <label>
+              Start Date <span>*</span>
+            </label>
+
+            <input
+              type="date"
+              defaultValue="2025-01-01"
+            />
+
+            <label>
+              End Date <span>*</span>
+            </label>
+
+            <input
+              type="date"
+              defaultValue="2025-12-31"
+            />
+
+            <label>
+              Category <span>*</span>
+            </label>
+
+            <select defaultValue="Savings">
+
+              <option>
+                Food & Dining
+              </option>
+
+              <option>
+                Transportation
+              </option>
+
+              <option>
+                Bills & Utilities
+              </option>
+
+              <option>
+                Savings
+              </option>
+
+            </select>
+
+            <label>
+              Status <span>*</span>
+            </label>
+
+            <select defaultValue="Ongoing">
+
+              <option>
+                Ongoing
+              </option>
+
+              <option>
+                Completed
+              </option>
+
+            </select>
+
+            <div className="modal-actions">
+
+              <button
+                className="cancel-btn"
+                onClick={() => setShowEditGoalModal(false)}
+              >
+                Cancel
+              </button>
+
+              <button
+                className="save-btn"
+                onClick={() => setShowEditGoalModal(false)}
+              >
+                Save Changes
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
+
     </div>
+
   );
 }
 

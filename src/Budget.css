@@ -17,6 +17,8 @@ body{
   color:#1f2937;
 }
 
+/* ================= NAVIGATION ================= */
+
 .dashboard-nav{
   height:80px;
   background:white;
@@ -69,6 +71,8 @@ body{
   color:#64748b;
 }
 
+/* ================= CONTENT ================= */
+
 .budget-content{
   max-width:1080px;
   margin:40px auto 70px;
@@ -99,6 +103,11 @@ body{
   border-radius:7px;
   font-weight:600;
   cursor:pointer;
+  transition:.2s;
+}
+
+.add-budget-btn:hover{
+  background:#0123a5;
 }
 
 .budget-filters{
@@ -116,6 +125,8 @@ body{
   color:#64748b;
   background:white;
 }
+
+/* ================= SUMMARY ================= */
 
 .budget-summary{
   display:grid;
@@ -170,6 +181,8 @@ body{
 .red{
   background:#EF4444;
 }
+
+/* ================= TABLE ================= */
 
 .budget-table-card{
   background:white;
@@ -264,6 +277,8 @@ body{
   color:white;
 }
 
+/* ================= PAGINATION ================= */
+
 .pagination{
   display:flex;
   justify-content:center;
@@ -284,6 +299,8 @@ body{
   background:#022FD9 !important;
   color:white;
 }
+
+/* ================= INSIGHTS ================= */
 
 .insights-title{
   font-size:22px;
@@ -346,6 +363,8 @@ body{
   stroke:#4264E6;
 }
 
+/* ================= PIE CHART ================= */
+
 .pie-layout{
   display:flex;
   align-items:center;
@@ -389,6 +408,8 @@ body{
 .entertainment{background:#db2777;}
 .savings{background:#06b6d4;}
 
+/* ================= FOOTER ================= */
+
 .dashboard-footer{
   height:60px;
   background:white;
@@ -399,7 +420,121 @@ body{
   font-size:12px;
 }
 
+/* ================= ADD BUDGET MODAL ================= */
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.transaction-modal{
+  width:460px;
+  background:white;
+  border-radius:10px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  animation:fadeIn .2s ease;
+}
+
+.transaction-modal h3{
+  font-size:28px;
+  color:#022FD9;
+  margin-bottom:18px;
+  font-weight:700;
+}
+
+.transaction-modal label{
+  display:block;
+  font-size:14px;
+  margin-bottom:8px;
+  color:#1f2937;
+  font-weight:500;
+}
+
+.transaction-modal label span{
+  color:#EF4444;
+}
+
+.transaction-modal input,
+.transaction-modal select{
+  width:100%;
+  height:44px;
+  border:1px solid #dbe1ea;
+  border-radius:7px;
+  padding:0 14px;
+  margin-bottom:16px;
+  font-size:14px;
+  font-family:'Poppins',sans-serif;
+  color:#64748b;
+  background:white;
+  outline:none;
+}
+
+.transaction-modal input:focus,
+.transaction-modal select:focus{
+  border-color:#022FD9;
+}
+
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:10px;
+}
+
+.cancel-btn{
+  min-width:95px;
+  height:40px;
+  border:1px solid #022FD9;
+  background:white;
+  color:#022FD9;
+  border-radius:7px;
+  font-weight:500;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.cancel-btn:hover{
+  background:#edf3ff;
+}
+
+.save-btn{
+  min-width:95px;
+  height:40px;
+  border:none;
+  background:#022FD9;
+  color:white;
+  border-radius:7px;
+  font-weight:500;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.save-btn:hover{
+  background:#0123a5;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(-10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
 @media(max-width:900px){
+
   .dashboard-nav{
     padding:0 20px;
   }
@@ -426,4 +561,10 @@ body{
     gap:10px;
     padding:18px;
   }
+
+  .transaction-modal{
+    width:92%;
+    padding:20px;
+  }
+
 }

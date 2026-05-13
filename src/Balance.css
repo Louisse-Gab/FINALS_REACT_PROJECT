@@ -202,4 +202,7 @@ body{
     width:100%;
     max-width:340px;
   }
+  .balance-form a{
+  text-decoration:none;
+}
 }

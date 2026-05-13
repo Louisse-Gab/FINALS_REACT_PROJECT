@@ -5,11 +5,13 @@ import "./Features.css";
 function Features() {
   return (
     <div className="features-page">
-      <nav className="navbar">
-        <div className="logo">
-          <span className="material-symbols-outlined logo-icon">savings</span>
-          PennyWise
-        </div>
+
+      {/* NAVBAR */}
+     <nav className="navbar">
+
+  <div className="logo">
+    <img src="/LOGO.png" alt="PennyWise Logo" className="logo-img" />
+  </div>
 
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>

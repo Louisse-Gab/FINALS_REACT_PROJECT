@@ -23,6 +23,10 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/Features" element={<Features />} />
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 2505ff2dc56b91a13a321380ef74b71a34fd411a
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
 

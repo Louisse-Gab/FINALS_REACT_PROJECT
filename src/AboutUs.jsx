@@ -4,16 +4,14 @@ import "./AboutUs.css";
 
 function AboutUs() {
   return (
-    <div className="about-page">
+   <div className="about-page">
 
       {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="logo">
-          <span className="material-symbols-outlined logo-icon">
-            savings
-          </span>
-          PennyWise
-        </div>
+     <nav className="navbar">
+
+  <div className="logo">
+    <img src="/LOGO.png" alt="PennyWise Logo" className="logo-img" />
+  </div>
 
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Transaction.css";
 
 function Transaction() {
-  const [showAddModal, setShowAddModal] = useState(false);
+  const [modalType, setModalType] = useState(null);
 
   const transactions = [
     ["restaurant", "Food & Dining", "-₱2,000.00", "Expense"],
@@ -13,34 +13,27 @@ function Transaction() {
     ["monetization_on", "Investment", "+₱10,000.00", "Income"],
   ];
 
+  const closeModal = () => {
+    setModalType(null);
+  };
+
   return (
     <div className="transactions-page">
-      <nav className="dashboard-nav">
-        <div className="dash-logo">
-          <span className="material-symbols-outlined">savings</span>
-          PennyWise
-        </div>
+
+
+      {/* NAVBAR */}
+     <nav className="navbar">
+
+  <div className="logo">
+    <img src="/LOGO.png" alt="PennyWise Logo" className="logo-img" />
+  </div>
 
         <ul className="dash-links">
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-
-          <li className="active">
-            <Link to="/transactions">Transactions</Link>
-          </li>
-
-          <li>
-            <Link to="/budget">Budget</Link>
-          </li>
-
-          <li>
-            <Link to="/goals">Goals</Link>
-          </li>
-
-          <li>
-            <Link to="/analytics">Analytics</Link>
-          </li>
+          <li><Link to="/dashboard">Dashboard</Link></li>
+          <li className="active"><Link to="/transactions">Transactions</Link></li>
+          <li><Link to="/budget">Budget</Link></li>
+          <li><Link to="/goals">Goals</Link></li>
+          <li><Link to="/analytics">Analytics</Link></li>
         </ul>
 
         <Link to="/profile" className="profile-link">
@@ -57,10 +50,7 @@ function Transaction() {
               <p>Total Balance</p>
               <h2>₱45,320.00</h2>
             </div>
-
-            <span className="material-symbols-outlined">
-              account_balance_wallet
-            </span>
+            <span className="material-symbols-outlined">account_balance_wallet</span>
           </div>
 
           <div className="summary-card income">
@@ -68,10 +58,7 @@ function Transaction() {
               <p>Total Income</p>
               <h2>₱25,800.00</h2>
             </div>
-
-            <span className="material-symbols-outlined">
-              trending_up
-            </span>
+            <span className="material-symbols-outlined">trending_up</span>
           </div>
 
           <div className="summary-card expense">
@@ -79,40 +66,23 @@ function Transaction() {
               <p>Total Expense</p>
               <h2>₱18,600.00</h2>
             </div>
-
-            <span className="material-symbols-outlined">
-              trending_down
-            </span>
+            <span className="material-symbols-outlined">trending_down</span>
           </div>
         </section>
 
         <div className="transaction-header">
           <h2>Transactions</h2>
 
-          <button
-            className="add-btn"
-            onClick={() => setShowAddModal(true)}
-          >
+          <button className="add-btn" onClick={() => setModalType("add")}>
             + Add Transaction
           </button>
         </div>
 
         <div className="filters">
-          <select>
-            <option>This Month</option>
-          </select>
-
-          <select>
-            <option>All Category</option>
-          </select>
-
-          <select>
-            <option>All Types</option>
-          </select>
-
-          <select>
-            <option>Newest First</option>
-          </select>
+          <select><option>This Month</option></select>
+          <select><option>All Category</option></select>
+          <select><option>All Types</option></select>
+          <select><option>Newest First</option></select>
         </div>
 
         <div className="table-card">
@@ -151,7 +121,7 @@ function Transaction() {
               </div>
 
               <div className="actions">
-                <button className="edit-btn">
+                <button className="edit-btn" onClick={() => setModalType("edit")}>
                   <span className="material-symbols-outlined">edit</span>
                 </button>
 
@@ -176,26 +146,35 @@ function Transaction() {
         © 2026 PennyWise. All rights reserved.
       </footer>
 
-      {showAddModal && (
+      {modalType && (
         <div className="modal-overlay">
           <div className="transaction-modal">
-            <h3>Add Transaction</h3>
+            <h3>
+              {modalType === "add" ? "Add Transaction" : "Edit Transaction"}
+            </h3>
 
             <label>
               Date of Transaction <span>*</span>
             </label>
-            <input type="date" />
+            <input
+              type="date"
+              defaultValue={modalType === "edit" ? "2025-10-17" : ""}
+            />
 
             <label>Description</label>
-            <input type="text" placeholder="Enter Description" />
+            <input
+              type="text"
+              placeholder="Enter Description"
+              defaultValue={
+                modalType === "edit" ? "Dinner at Café Coffee Day" : ""
+              }
+            />
 
             <label>
               Category <span>*</span>
             </label>
-            <select defaultValue="">
-              <option value="" disabled>
-                Select Category
-              </option>
+            <select defaultValue={modalType === "edit" ? "Food & Dining" : ""}>
+              <option value="" disabled>Select Category</option>
               <option>Food & Dining</option>
               <option>Salary</option>
               <option>Transportation</option>
@@ -206,10 +185,8 @@ function Transaction() {
             <label>
               Transaction Type <span>*</span>
             </label>
-            <select defaultValue="">
-              <option value="" disabled>
-                All Types
-              </option>
+            <select defaultValue={modalType === "edit" ? "Expense" : ""}>
+              <option value="" disabled>All Types</option>
               <option>Income</option>
               <option>Expense</option>
             </select>
@@ -217,21 +194,19 @@ function Transaction() {
             <label>
               Amount <span>*</span>
             </label>
-            <input type="text" placeholder="Amount" />
+            <input
+              type="text"
+              placeholder="Amount"
+              defaultValue={modalType === "edit" ? "₱2,000.00" : ""}
+            />
 
             <div className="modal-actions">
-              <button
-                className="cancel-btn"
-                onClick={() => setShowAddModal(false)}
-              >
+              <button className="cancel-btn" onClick={closeModal}>
                 Cancel
               </button>
 
-              <button
-                className="save-btn"
-                onClick={() => setShowAddModal(false)}
-              >
-                Add Transaction
+              <button className="save-btn" onClick={closeModal}>
+                {modalType === "add" ? "Add Transaction" : "Save"}
               </button>
             </div>
           </div>

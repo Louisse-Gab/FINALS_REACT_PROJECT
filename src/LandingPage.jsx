@@ -7,15 +7,12 @@ function LandingPage() {
     <div className="landing-page">
 
       {/* NAVBAR */}
-      <nav className="navbar">
+     <nav className="navbar">
 
-        <div className="logo">
-          <span className="material-symbols-outlined logo-icon">
-            savings
-          </span>
+  <div className="logo">
+    <img src="/LOGO.png" alt="PennyWise Logo" className="logo-img" />
+  </div>
 
-          PennyWise
-        </div>
 
 <ul className="nav-links">
   <li className="active">
@@ -69,9 +66,20 @@ function LandingPage() {
         </p>
 
         <div className="hero-buttons">
-          <button>Get Started for Free</button>
-          <button className="learn-btn">Learn More</button>
-        </div>
+
+  <Link to="/signup">
+    <button>
+      Get Started for Free
+    </button>
+  </Link>
+
+  <Link to="/getstarted">
+    <button className="learn-btn">
+      Learn More
+    </button>
+  </Link>
+
+</div>
 
       </section>
 
@@ -81,7 +89,7 @@ function LandingPage() {
         <h2>
           Take Control <span>of Your Money</span>
         </h2>
-
+<br></br>
         <p>
           PennyWise helps you track your spending, set savings goals,
           and manage your budget effortlessly—all in one place.

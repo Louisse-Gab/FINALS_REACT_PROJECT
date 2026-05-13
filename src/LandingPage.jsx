@@ -7,15 +7,12 @@ function LandingPage() {
     <div className="landing-page">
 
       {/* NAVBAR */}
-      <nav className="navbar">
+     <nav className="navbar">
 
-        <div className="logo">
-          <span className="material-symbols-outlined logo-icon">
-            savings
-          </span>
+  <div className="logo">
+    <img src="/LOGO.png" alt="PennyWise Logo" className="logo-img" />
+  </div>
 
-          PennyWise
-        </div>
 
 <ul className="nav-links">
   <li className="active">

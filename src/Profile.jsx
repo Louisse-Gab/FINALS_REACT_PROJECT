@@ -5,11 +5,13 @@ import "./Profile.css";
 function Profile() {
   return (
     <div className="profile-page">
-      <nav className="dashboard-nav">
-        <div className="dash-logo">
-          <span className="material-symbols-outlined">savings</span>
-          PennyWise
-        </div>
+
+      {/* NAVBAR */}
+     <nav className="navbar">
+
+  <div className="logo">
+    <img src="/LOGO.png" alt="PennyWise Logo" className="logo-img" />
+  </div>
 
         <ul className="dash-links">
           <li><Link to="/dashboard">Dashboard</Link></li>

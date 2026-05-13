@@ -33,15 +33,13 @@ function Goals() {
   return (
     <div className="goals-page">
 
-      <nav className="dashboard-nav">
 
-        <div className="dash-logo">
-          <span className="material-symbols-outlined">
-            savings
-          </span>
+      {/* NAVBAR */}
+     <nav className="navbar">
 
-          PennyWise
-        </div>
+  <div className="logo">
+    <img src="/LOGO.png" alt="PennyWise Logo" className="logo-img" />
+  </div>
 
         <ul className="dash-links">
 

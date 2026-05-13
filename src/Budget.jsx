@@ -5,14 +5,14 @@ import "./Budget.css";
 function Budget() {
   return (
     <div className="budget-page">
-      <nav className="dashboard-nav">
+      
 
-        <div className="dash-logo">
-          <span className="material-symbols-outlined">
-            savings
-          </span>
-          PennyWise
-        </div>
+      {/* NAVBAR */}
+     <nav className="navbar">
+
+  <div className="logo">
+    <img src="/LOGO.png" alt="PennyWise Logo" className="logo-img" />
+  </div>
 
         <ul className="dash-links">
           <li>

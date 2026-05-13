@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import LandingPage from "./LandingPage";
 import Features from "./Features";
+// import AboutUs from "./AboutUs";
+// import GetStarted from "./GetStarted";
 import SignUp from "./SignUp";
 import Login from "./Login";
 import Balance from "./Balance";
@@ -20,7 +22,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/features" element={<Features />} />
+        <Route path="/Features" element={<Features />} />
+        {/* <Route path="/about" element={<AboutUs />} /> */}
+      {/* <Route path="/getstarted" element={<GetStarted />} /> */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
 

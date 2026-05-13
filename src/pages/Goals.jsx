@@ -41,24 +41,12 @@ function Goals() {
     <div className="goals-page">
 
 
-<<<<<<< HEAD
-        <div className="dash-logo">
-
-          <span className="material-symbols-outlined">
-            savings
-          </span>
-
-          PennyWise
-
-        </div>
-=======
       {/* NAVBAR */}
      <nav className="navbar">
 
   <div className="logo">
     <img src="/LOGO.png" alt="PennyWise Logo" className="logo-img" />
   </div>
->>>>>>> 2505ff2dc56b91a13a321380ef74b71a34fd411a
 
         <ul className="dash-links">
 

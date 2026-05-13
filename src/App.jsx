@@ -5,6 +5,7 @@ import LandingPage from "./LandingPage";
 import Features from "./Features";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import Balance from "./Balance";
 import Currency from "./Currency";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/currency" element={<Currency />} />
+        <Route path="/balance" element={<Balance />} />
 
       </Routes>
     </BrowserRouter>

@@ -6,8 +6,10 @@ function Currency() {
   return (
     <div className="currency-page">
       <div className="currency-card">
+
         {/* STEPS */}
         <div className="steps-bar">
+
           <div className="step-group">
             <div className="step-circle active">1</div>
             <span>Select Base Currency</span>
@@ -26,10 +28,12 @@ function Currency() {
             <div className="step-circle">3</div>
             <span>Success!</span>
           </div>
+
         </div>
 
         {/* CONTENT */}
         <div className="currency-content">
+
           <div className="currency-icon">
             <span className="material-symbols-outlined">
               currency_exchange
@@ -39,22 +43,37 @@ function Currency() {
           <h1>Select Base Currency</h1>
 
           <div className="currency-form">
+
             <label>Base Currency</label>
 
             <div className="select-box">
+
               <select defaultValue="">
                 <option value="" disabled>
                   Select Currency
                 </option>
-                <option value="PHP">PHP - Philippine Peso</option>
-                <option value="USD">USD - US Dollar</option>
-                <option value="EUR">EUR - Euro</option>
-                <option value="JPY">JPY - Japanese Yen</option>
+
+                <option value="PHP">
+                  PHP - Philippine Peso
+                </option>
+
+                <option value="USD">
+                  USD - US Dollar
+                </option>
+
+                <option value="EUR">
+                  EUR - Euro
+                </option>
+
+                <option value="JPY">
+                  JPY - Japanese Yen
+                </option>
               </select>
 
               <span className="material-symbols-outlined">
                 expand_more
               </span>
+
             </div>
 
             <p>
@@ -62,16 +81,22 @@ function Currency() {
               consistent and easy to track.
             </p>
 
-            <button type="button">
-              Confirm Currency
-            </button>
+            <Link to="/balance">
+              <button type="button">
+                Confirm Currency
+              </button>
+            </Link>
+
           </div>
+
         </div>
+
       </div>
 
       <Link to="/" className="back-home">
         ← Back To Home
       </Link>
+
     </div>
   );
 }

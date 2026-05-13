@@ -12,7 +12,7 @@ body{
   color:#000000;
 }
 
-.about-page{
+.getstarted-page{
   width:100%;
   min-height:100vh;
   background:#F8FAFC;
@@ -117,114 +117,123 @@ body{
 
 /* HERO */
 
-.about-hero{
-  background:linear-gradient(to bottom,#4264E6 0%,#D8DEF7 100%);
-  text-align:center;
-  padding:90px 20px 110px;
-}
-
-.about-hero h1{
-  font-family:'Mansalva',cursive;
-  font-size:78px;
-  color:white;
-  margin-bottom:20px;
-}
-
-.about-hero p{
-  max-width:700px;
-  margin:0 auto;
-  color:white;
-  font-size:20px;
-  line-height:1.7;
-}
-
-/* MISSION */
-
-.mission-section{
+.hero-section{
   background:#F8FAFC;
   text-align:center;
-  color: #000000;
-  padding:70px 20px;
+  padding:90px 20px 70px;
 }
 
-.mission-section h2{
-  font-size:50px;
-  margin-bottom:25px;
-  color: #000000;
+.hero-section h1{
+  font-family:'Mansalva',cursive;
+  font-size:88px;
+  margin-bottom:20px;
+  color:#000000;
 }
 
-.mission-section p{
-  max-width:700px;
-  margin:0 auto;
-  font-size:21px;
-  line-height:1.8;
-}
-
-/* INFO SECTION */
-
-.info-section{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-}
-
-.info-box{
-  padding:70px 50px;
-  min-height:350px;
-}
-
-.light-box{
-  background:#DDE4FA;
-  text-align:center;
-}
-
-.light-box h2{
+.blue-text{
   color:#022FD9;
 }
 
-.light-box p{
-  max-width:420px;
-  margin:0 auto;
+.hero-section p{
+  max-width:800px;
+  margin:0 auto 40px;
+  font-size:22px;
+  line-height:1.7;
 }
 
-.blue-box{
-  background:#4264E6;
+.begin-btn{
+  border:none;
+  background:#022FD9;
   color:white;
-}
-
-.info-box h2{
-  font-size:45px;
-  margin-bottom:28px;
-}
-
-.info-box p,
-.info-box li{
+  padding:16px 35px;
+  border-radius:12px;
   font-size:20px;
-  line-height:1.8;
+  font-weight:600;
+  cursor:pointer;
 }
 
-.blue-box ul{
-  padding-left:22px;
+/* STEP SECTIONS */
+
+.step-section,
+.dashboard-section{
+  padding:65px 80px;
+  display:flex;
+  gap:30px;
+  align-items:flex-start;
+  background:#E7ECFA;
 }
 
-/* VISION */
-
-.vision-section{
+.white-bg{
   background:#F8FAFC;
-  text-align:center;
-  padding:80px 20px 130px;
 }
 
-.vision-section h2{
-  font-size:50px;
-  margin-bottom:25px;
+.step-number{
+  width:60px;
+  height:60px;
+  min-width:60px;
+  min-height:60px;
+  border-radius:50%;
+  background:#022FD9;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:24px;
+  font-weight:700;
+}
+
+.step-content h2{
+  font-size:48px;
+  margin-bottom:18px;
   color: #000000;
 }
 
-.vision-section p{
-  max-width:760px;
-  margin:0 auto;
-  font-size:21px;
+.step-content p{
+  max-width:900px;
+  font-size:24px;
   line-height:1.8;
+}
+
+.step-content span{
+  color:#022FD9;
+  font-weight:500;
+}
+
+/* DASHBOARD */
+
+.dashboard-section{
+  border-top:3px;
+}
+
+.dashboard-cards{
+  margin-top:35px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  max-width:850px;
+}
+
+.dashboard-card{
+  background:white;
+  border-radius:12px;
+  padding:28px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.colored-card{
+  background:#E7ECFA;
+}
+
+.dashboard-card h3{
+  color:#022FD9;
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.dashboard-card p{
+  font-size:17px;
+  line-height:1.6;
 }
 
 /* FOOTER */
@@ -268,37 +277,47 @@ body{
     display:none;
   }
 
-  .about-hero{
-    padding:70px 20px 90px;
+  .hero-section{
+    padding:70px 20px;
   }
 
-  .about-hero h1{
-    font-size:54px;
+  .hero-section h1{
+    font-size:56px;
   }
 
-  .about-hero p{
-    font-size:16px;
+  .hero-section p{
+    font-size:18px;
   }
 
-  .mission-section h2,
-  .vision-section h2,
-  .info-box h2{
-    font-size:34px;
+  .begin-btn{
+    font-size:18px;
+    padding:14px 28px;
   }
 
-  .mission-section p,
-  .vision-section p,
-  .info-box p,
-  .info-box li{
-    font-size:16px;
+  .step-section,
+  .dashboard-section{
+    flex-direction:column;
+    padding:45px 25px;
   }
 
-  .info-section{
+  .step-content h2{
+    font-size:32px;
+  }
+
+  .step-content p{
+    font-size:18px;
+  }
+
+  .dashboard-cards{
     grid-template-columns:1fr;
   }
 
-  .info-box{
-    padding:50px 25px;
+  .dashboard-card h3{
+    font-size:20px;
+  }
+
+  .dashboard-card p{
+    font-size:15px;
   }
 
   .footer{

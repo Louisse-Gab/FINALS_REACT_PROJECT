@@ -10,6 +10,10 @@ import Currency from "./Currency";
 import Success from "./Success";
 import Dashboard from "./Dashboard";
 import Transaction from "./Transaction";
+import Budget from "./Budget";
+import Goals from "./Goals";
+import Analytics from "./Analytics";
+import Profile from "./Profile";
 
 function App() {
   return (
@@ -26,6 +30,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
 
         <Route path="/transactions" element={<Transaction />} />
+        <Route path="/budget" element={<Budget />} />
+        <Route path="/goals" element={<Goals />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );

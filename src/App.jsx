@@ -7,6 +7,7 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import Balance from "./Balance";
 import Currency from "./Currency";
+import Success from "./Success";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
         <Route path="/currency" element={<Currency />} />
         <Route path="/balance" element={<Balance />} />
+        <Route path="/success" element={<Success />} />
 
       </Routes>
     </BrowserRouter>

@@ -49,9 +49,11 @@ function Balance() {
               baseline for accurate monitoring.
             </p>
 
-            <button type="button" className="confirm-btn">
-              Confirm Cash Balance
-            </button>
+            <Link to="/success">
+  <button type="button" className="confirm-btn">
+    Confirm Cash Balance
+  </button>
+</Link>
 
             <Link to="/currency" className="back-btn">
               Back

@@ -7,6 +7,8 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import Balance from "./Balance";
 import Currency from "./Currency";
+import GetStarted from "./GetStarted";
+import AboutUs from "./AboutUs";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
 
         {/* FEATURES PAGE */}
         <Route path="/features" element={<Features />} />
+        <Route path="/about" element={<AboutUs />} />
 
         {/* SIGN UP PAGE */}
         <Route path="/signup" element={<SignUp />} />
@@ -25,6 +28,7 @@ function App() {
         {/* LOGIN PAGE */}
         <Route path="/login" element={<Login />} />
 
+        <Route path="/getstarted" element={<GetStarted />} /> 
         <Route path="/currency" element={<Currency />} />
         <Route path="/balance" element={<Balance />} />
 
